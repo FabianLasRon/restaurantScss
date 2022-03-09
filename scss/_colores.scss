@@ -1,0 +1,111 @@
+$color_fondo:black;
+$color_segundario:rgba(241, 7, 7, 1);
+$color_border:1px solid white;
+$color_letra:white;
+
+body{
+    background: $color_fondo;
+}
+
+
+
+.content-1,.content-2,.content-4,nav{
+    border: $color_border;
+}
+
+
+.content-4{
+    background: $color_fondo;
+}
+
+.logoLetras{
+    color: $color_letra;
+}
+
+nav ul{
+    li{
+        a{
+            color: #fff;
+        }
+    }
+}
+
+
+nav ul li a{
+    &:hover{
+        background: rgba(241, 7, 7, 0.7);
+    }
+}
+
+nav{
+    background: black;
+}
+
+h1{
+    color: $color_letra;
+}
+
+main p{
+    color: rgb(211, 198, 198);
+}
+
+.content-1 img,.content-2 img,.content-3 img{
+    border: 2px solid white;
+}
+
+
+.content-1,.content-2{
+    color: $color_letra;
+    background: $color_fondo;
+}
+
+
+.content-3__1,.content-3__2,.content-3__3,.art-content-1,.art-content-2{
+    background-color: $color_fondo;
+}
+
+.content-4__text{
+    color: $color_letra;
+}
+
+.content-4 img{
+    border: $color_border;
+}
+
+
+footer{
+    color: $color_letra;
+    background-color: $color_fondo;
+}
+
+.redes a i{
+    &:hover{
+        color: $color_letra;
+    }
+}
+
+
+.redes a i{
+    color: $color_segundario;
+}
+
+.content-1 h3,.content-2 h3,.content-3 h3{
+    color:$color_segundario;
+}
+
+
+input,textarea{
+    border: $color_border;
+    color: $color_letra;
+}
+
+label{
+    color: $color_letra;
+}
+
+button{
+    border: $color_border;
+}
+
+
+

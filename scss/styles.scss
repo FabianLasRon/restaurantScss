@@ -1,0 +1,288 @@
+@import "colores";
+@import "tipografia";
+@import "estructura";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows: 0.2fr 3fr 1fr 1fr 1fr 0.2fr;
+    grid-template-areas: 
+                        "nav nav nav nav"
+                        "main main main main"
+                        "content-1 content-1 content-2 content-2"
+                        "content-3 content-3 content-3 content-3"
+                        "content-4 content-4 content-4 content-4"
+                        "footer footer footer footer"
+
+}
+
+
+nav{
+    grid-area: nav;
+}
+
+main{
+    grid-area: main;
+}
+
+.content-1{
+    grid-area: content-1;
+    display: flex;
+}
+
+.content-2{
+    grid-area: content-2;
+    display: flex;
+}
+
+.content-3{
+    grid-area: content-3;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.content-4{
+    grid-area: content-4;
+    display: flex;
+    align-items: center;
+}
+
+footer{
+    grid-area: footer;
+}
+
+.logoLetras{
+    color: #fff;
+    float: left;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+}
+
+nav{
+    position: sticky;
+}
+
+.main{
+    background-image:linear-gradient(rgba(0,0,0,0.7), #00020593 ) ,url(../images/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.logo{
+    border-radius: 500px;
+    overflow: hidden;
+}
+
+.content-1 img,.content-2 img,.content-3 img{
+    border-radius: 20%;
+}
+
+
+.content-3__1,.content-3__2,.content-3__3,.art-content-1,.art-content-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.content-4__text{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.content-4 img{
+    border-radius:6%;
+}
+
+
+.formulario{
+    background-image: linear-gradient(rgba(0,0,0,0.7), #221b0da9 ),url(../images/fondo2.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.input-group{
+    margin-bottom: 30px;
+    position: relative;
+}
+
+
+input,textarea{
+    outline: 0;
+    background: transparent;
+}
+
+label{
+    position: absolute;
+    cursor: text;
+    transition: 0.2s;
+    left: 0;
+    top: 0;
+}
+
+button{
+    color:#fff ;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+input:focus~label,
+input:valid~label,
+textarea:focus~label,
+textarea:valid~label
+{
+    top:-35px;
+}
+
+
+footer .redes{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/*-----------------@MEDIA------------------------*/
+
+@media only screen and (max-width:1000px){
+    .grid-container{
+        grid-template-columns:1fr;
+        grid-template-rows:0.4fr 3fr 2.5fr 2.5fr 3fr 1.2fr 0.8fr ;
+        grid-template-areas:
+                            "nav"
+                            "main"
+                            "content-1"
+                            "content-2"
+                            "content-3"
+                            "content-4"
+                            "footer"
+    }
+}
+
+@media only screen and (max-width:844px){
+
+    
+
+    .content-1,.content-2{
+        display: flex;
+        flex-direction: column;
+    }
+    .content-1 img,.content-2 img{
+        margin-left: 3%;
+        margin-top: 5%;
+    }
+
+
+    .art-content-1,.art-content-2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 300px
+    }
+
+    .content-3{
+        display: flex;
+        flex-direction: column;
+        margin-left: 6%;
+    }
+
+    .content-3,.content-3__1,.content-3__2,.content-3__3{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .content-3 h3,.content-3 p{
+        width: 200px;
+        text-align: center;
+        
+    }
+
+
+    .content-4{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 30px;
+    }
+
+    .content-4 img{
+        width: 80%;
+    }
+
+    .content-4__text{
+        text-align: start;
+        left: 50px;
+        float: left;
+        margin-bottom: 100px;
+    }
+
+    .main{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main h1{
+        font-size: 50px;
+    }
+
+    .main p{
+        font-size: 26px;
+    }
+
+    nav{
+        height: 200px;
+    }
+
+
+    
+
+}
+
+
+@media only screen and (max-width:844px){
+    .logoLetras{
+        width: 100%;
+        text-align: center;
+        
+    }
+
+    nav{
+        padding: 20px;
+        position: sticky; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 250px;
+        background: rgba(0, 0, 0, 0.6);
+        border-bottom: 1px solid #fff;
+    }
+
+
+    nav ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+}
+
