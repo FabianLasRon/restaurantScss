@@ -1,10 +1,18 @@
-$color_fondo:black;
-$color_segundario:rgba(241, 7, 7, 1);
+/*$color_fondo:black;
+$color_segundario:rgba(241, 7, 7, 1);*/
+
 $color_border:1px solid white;
 $color_letra:white;
 
+$color_fondos:(             /**************USO DEL MAP***************************************/                 
+    "primario":black,
+    "segundario":rgba(241, 7, 7, 1)
+);
+
+
+
 body{
-    background: $color_fondo;
+    background: map-get($color_fondos,primario);
 }
 
 
@@ -15,7 +23,7 @@ body{
 
 
 .content-4{
-    background: $color_fondo;
+    background: map-get($color_fondos,primario);
 }
 
 .logoLetras{
@@ -33,12 +41,12 @@ nav ul{
 
 nav ul li a{
     &:hover{
-        background: rgba(241, 7, 7, 0.7);
+        background:map-get($color_fondos,segundario);
     }
 }
 
 nav{
-    background: black;
+    background: map-get($color_fondos,primario);
 }
 
 h1{
@@ -54,15 +62,36 @@ main p{
 }
 
 
-.content-1,.content-2{
+.content-1{
     color: $color_letra;
-    background: $color_fondo;
+    background: map-get($color_fondos,primario);
 }
+
+.content-2{             /***************************USO DEL EXTEND****************************************/
+    @extend .content-1;
+    :hover{
+        color: map-get($color_fondos,segundario);
+        text-transform: uppercase;
+    }
+}
+
 
 
 .content-3__1,.content-3__2,.content-3__3,.art-content-1,.art-content-2{
-    background-color: $color_fondo;
+    background: map-get($color_fondos,primario);
 }
+
+
+.art-content-1{
+    @extend .content-3__1;
+    :hover{
+        text-decoration-line: line-through;
+    }
+    
+    
+}
+
+
 
 .content-4__text{
     color: $color_letra;
@@ -75,22 +104,19 @@ main p{
 
 footer{
     color: $color_letra;
-    background-color: $color_fondo;
+    background: map-get($color_fondos,primario);
 }
 
 .redes a i{
+    color:map-get($color_fondos,segundario);
     &:hover{
         color: $color_letra;
     }
 }
 
 
-.redes a i{
-    color: $color_segundario;
-}
-
 .content-1 h3,.content-2 h3,.content-3 h3{
-    color:$color_segundario;
+    color:map-get($color_fondos,segundario);
 }
 
 

@@ -1,7 +1,9 @@
+/*$color_fondo:black;
+$color_segundario:rgba(241, 7, 7, 1);*/
 body {
   background: black; }
 
-.content-1, .content-2, .content-4, nav {
+.content-1, .content-2, .content-2, .content-4, nav {
   border: 1px solid white; }
 
 .content-4 {
@@ -14,7 +16,7 @@ nav ul li a {
   color: #fff; }
 
 nav ul li a:hover {
-  background: rgba(241, 7, 7, 0.7); }
+  background: #f10707; }
 
 nav {
   background: black; }
@@ -25,15 +27,24 @@ h1 {
 main p {
   color: #d3c6c6; }
 
-.content-1 img, .content-2 img, .content-3 img {
+.content-1 img, .content-2 img, .content-2 img, .content-3 img {
   border: 2px solid white; }
 
 .content-1, .content-2 {
   color: white;
   background: black; }
 
-.content-3__1, .content-3__2, .content-3__3, .art-content-1, .art-content-2 {
-  background-color: black; }
+.content-2 {
+  /***************************USO DEL EXTEND****************************************/ }
+  .content-2 :hover {
+    color: #f10707;
+    text-transform: uppercase; }
+
+.content-3__1, .art-content-1, .content-3__2, .content-3__3, .art-content-1, .art-content-2 {
+  background: black; }
+
+.art-content-1 :hover {
+  text-decoration-line: line-through; }
 
 .content-4__text {
   color: white; }
@@ -43,15 +54,14 @@ main p {
 
 footer {
   color: white;
-  background-color: black; }
-
-.redes a i:hover {
-  color: white; }
+  background: black; }
 
 .redes a i {
   color: #f10707; }
+  .redes a i:hover {
+    color: white; }
 
-.content-1 h3, .content-2 h3, .content-3 h3 {
+.content-1 h3, .content-2 h3, .content-2 h3, .content-3 h3 {
   color: #f10707; }
 
 input, textarea {
@@ -88,7 +98,7 @@ main p {
   margin-left: 20px;
   font-size: 30px; }
 
-.content-3__1, .content-3__2, .content-3__3, .art-content-1, .art-content-2 {
+.content-3__1, .art-content-1, .content-3__2, .content-3__3, .art-content-1, .art-content-2 {
   text-align: center; }
 
 .content-4__text {
@@ -121,29 +131,12 @@ footer .redes {
 main {
   height: 90vh; }
 
-.content-1 {
-  padding: 10px; }
-
-.content-2 {
-  padding: 10px; }
-
-.content-3 {
+.content-1, .content-2, .content-2, .art-content-3 {
   padding: 10px; }
 
 .logoLetras {
   padding: 10px;
   height: 80px; }
-
-nav ul {
-  float: right;
-  padding: 0;
-  margin: 0; }
-
-nav ul li a {
-  padding: 12px 30px; }
-
-nav ul li a:hover {
-  border-radius: 6px; }
 
 nav {
   padding: 20px;
@@ -152,10 +145,19 @@ nav {
   width: 100%;
   height: 100px; }
 
+ul {
+  float: right;
+  padding: 0;
+  margin: 0; }
+  ul li a {
+    padding: 12px 30px; }
+    ul li a:hover {
+      border-radius: 6px; }
+
 .logo {
   height: auto; }
 
-.content-3__1, .content-3__2, .content-3__3, .art-content-1, .art-content-2 {
+.content-3__1, .art-content-1, .content-3__2, .content-3__3, .art-content-1, .art-content-2 {
   margin: 10vh 16px 10vh 16px;
   margin-right: 16px; }
 
@@ -211,7 +213,7 @@ nav {
 main {
   grid-area: main; }
 
-.content-1 {
+.content-1, .content-2 {
   grid-area: content-1;
   display: flex; }
 
@@ -248,24 +250,28 @@ nav {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), #00020593), url(../images/fondo.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  /***********************USO DEL MIXIN*************************/
   display: flex;
-  justify-content: center;
-  align-items: center; }
+  align-items: center;
+  justify-content: center; }
 
 .logo {
   border-radius: 500px;
   overflow: hidden; }
 
-.content-1 img, .content-2 img, .content-3 img {
+.content-1 img, .content-2 img, .content-2 img, .content-3 img {
   border-radius: 20%; }
 
-.content-3__1, .content-3__2, .content-3__3, .art-content-1, .art-content-2 {
+.content-3__1, .art-content-1, .content-3__2, .content-3__3, .art-content-1, .art-content-2 {
   display: flex;
-  flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  flex-direction: column; }
 
 .content-4__text {
+  /***********************USO DEL MIXIN*************************/
   display: flex;
+  align-items: center;
+  /****************MIXIN*********************/
   flex-direction: column; }
 
 .content-4 img {
@@ -275,6 +281,7 @@ nav {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), #221b0da9), url(../images/fondo2.jpg);
   background-position: center;
   background-size: cover;
+  /***********************USO DEL MIXIN*************************/
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -318,10 +325,10 @@ footer .redes {
     grid-template-areas: "nav" "main" "content-1" "content-2" "content-3" "content-4" "footer"; } }
 
 @media only screen and (max-width: 844px) {
-  .content-1, .content-2 {
+  .content-1, .content-2, .content-2 {
     display: flex;
     flex-direction: column; }
-  .content-1 img, .content-2 img {
+  .content-1 img, .content-2 img, .content-2 img {
     margin-left: 3%;
     margin-top: 5%; }
   .art-content-1, .art-content-2 {
@@ -334,7 +341,7 @@ footer .redes {
     display: flex;
     flex-direction: column;
     margin-left: 6%; }
-  .content-3, .content-3__1, .content-3__2, .content-3__3 {
+  .content-3, .content-3__1, .art-content-1, .content-3__2, .content-3__3 {
     display: flex;
     flex-direction: column;
     align-items: flex-start; }
@@ -361,9 +368,7 @@ footer .redes {
   .main p {
     font-size: 26px; }
   nav {
-    height: 200px; } }
-
-@media only screen and (max-width: 844px) {
+    height: 200px; }
   .logoLetras {
     width: 100%;
     text-align: center; }

@@ -2,6 +2,12 @@
 @import "tipografia";
 @import "estructura";
 
+@mixin flexCenter {/***********************USO DEL MIXIN*************************/
+    display: flex;
+    align-items: center;
+}
+
+
 *{
     padding: 0;
     margin: 0;
@@ -76,9 +82,8 @@ nav{
     background-image:linear-gradient(rgba(0,0,0,0.7), #00020593 ) ,url(../images/fondo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    display: flex;
+    @include flexCenter;
     justify-content: center;
-    align-items: center;
 }
 
 
@@ -94,13 +99,14 @@ nav{
 
 .content-3__1,.content-3__2,.content-3__3,.art-content-1,.art-content-2{
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
+    
 }
 
 
-.content-4__text{
-    display: flex;
+.content-4__text{//
+    @include flexCenter;/****************MIXIN*********************/
     flex-direction: column;
 }
 
@@ -114,8 +120,7 @@ nav{
     background-image: linear-gradient(rgba(0,0,0,0.7), #221b0da9 ),url(../images/fondo2.jpg);
     background-position: center;
     background-size: cover;
-    display: flex;
-    align-items: center;
+    @include flexCenter;
     justify-content: center;
 }
 
@@ -254,13 +259,6 @@ footer .redes{
         height: 200px;
     }
 
-
-    
-
-}
-
-
-@media only screen and (max-width:844px){
     .logoLetras{
         width: 100%;
         text-align: center;
@@ -284,5 +282,8 @@ footer .redes{
         flex-wrap: wrap;
         justify-content: space-evenly;
     }
+    
+
 }
+
 
